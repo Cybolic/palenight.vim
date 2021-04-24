@@ -88,7 +88,7 @@ let s:black = s:colors.black
 let s:visual_black = s:colors.visual_black " Black out selected text in 16-color visual mode
 let s:comment_grey = s:colors.comment_grey
 let s:gutter_fg_grey = s:colors.gutter_fg_grey
-let s:cursor_grey = s:colors.cursor_grey
+let s:cursor_grey = s:colors.white_mask_1
 let s:visual_grey = s:colors.visual_grey
 let s:menu_grey = s:colors.menu_grey
 let s:special_grey = s:colors.special_grey
@@ -187,12 +187,42 @@ call s:h("WildMenu", { "fg": s:black, "bg": s:blue }) " current match in 'wildme
 
 " }}}
 
-" Coc {{{
+" Coc and lsp {{{
 
+" Coc
 call s:h("CocErrorSign", { "fg": s:red, "gui": "bold" })
 call s:h("CocWarningSign", { "fg": s:dark_yellow, "gui": "bold" })
 call s:h("CocInfoSign", { "fg": s:yellow, "gui": "bold" })
 call s:h("CocHintSign", { "fg": s:blue, "gui": "bold" })
+call s:h("CocCursorRange", { "fg": s:black, "bg": s:red })
+
+" Nvim builtin lsp
+call s:h("LspDiagnosticsSignError", { "fg": s:red, "gui": "bold" })
+call s:h("LspDiagnosticsSignWarning", { "fg": s:dark_yellow, "gui": "bold" })
+call s:h("LspDiagnosticsSignInformation", { "fg": s:yellow, "gui": "bold" })
+call s:h("LspDiagnosticsSignHint", { "fg": s:blue, "gui": "bold" })
+
+" }}}
+
+" Nvim CursorLine fixes {{{
+
+" Nvim
+call s:h("NvimSpacing", {"fg": s:white})
+call s:h("NvimTreeNormal", {"fg": s:white})
+call s:h("NvimTreePopup", {"fg": s:white})
+
+" Doxygen
+call s:h("doxygenCommentWhite", {"fg": s:white})
+
+" Coc
+call s:h("CocOutlineName", {"fg": s:white})
+
+" LspCxx
+call s:h("LspCxxHlSymVariable", {"fg": s:white})
+call s:h("LspCxxHlSymParameter", {"fg": s:white})
+call s:h("LspCxxHlSymUnknown", {"fg": s:white})
+call s:h("LspCxxHlSymUnknownStaticField", {"fg": s:white})
+call s:h("LspCxxHlSkippedRegionBeginEnd", {"fg": s:white})
 
 " }}}
 
