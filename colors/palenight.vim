@@ -187,6 +187,20 @@ call s:h("WildMenu", { "fg": s:black, "bg": s:blue }) " current match in 'wildme
 
 " }}}
 
+" VimWiki {{{
+
+call s:h("VimwikiHeaderChar", { "fg": s:white })
+call s:h("VimwikiBoldChar", { "fg": s:white })
+call s:h("VimwikiHeader1", { "fg": s:yellow, "gui": "bold" })
+call s:h("VimwikiHeader2", { "fg": s:green, "gui": "bold" })
+call s:h("VimwikiHeader3", { "fg": s:purple, "gui": "bold" })
+call s:h("VimwikiHeader4", { "fg": s:blue_purple, "gui": "bold" })
+call s:h("VimwikiHeader5", { "fg": s:blue, "gui": "bold" })
+call s:h("VimwikiLink", { "fg": s:cyan, "gui": "underline" })
+call s:h("VimwikiList", { "fg": s:red })
+
+" }}} "
+
 " Coc and lsp {{{
 
 " Coc
@@ -196,11 +210,25 @@ call s:h("CocInfoSign", { "fg": s:yellow, "gui": "bold" })
 call s:h("CocHintSign", { "fg": s:blue, "gui": "bold" })
 call s:h("CocCursorRange", { "fg": s:black, "bg": s:red })
 
+call s:h("CocHighlightText", { "bg": s:visual_grey })
+call s:h("CocHighlightRead", { "bg": s:visual_grey })
+call s:h("CocHighlightWrite", { "bg": s:visual_grey })
+
+
 " Nvim builtin lsp
 call s:h("LspDiagnosticsSignError", { "fg": s:red, "gui": "bold" })
 call s:h("LspDiagnosticsSignWarning", { "fg": s:dark_yellow, "gui": "bold" })
 call s:h("LspDiagnosticsSignInformation", { "fg": s:yellow, "gui": "bold" })
 call s:h("LspDiagnosticsSignHint", { "fg": s:blue, "gui": "bold" })
+
+call s:h("LspDiagnosticsDefaultError", { "fg": s:red, "gui": "bold" })
+call s:h("LspDiagnosticsDefaultWarning", { "fg": s:dark_yellow, "gui": "bold" })
+call s:h("LspDiagnosticsDefaultInformation", { "fg": s:yellow, "gui": "bold" })
+call s:h("LspDiagnosticsDefaultHint", { "fg": s:blue, "gui": "bold" })
+
+call s:h("LspReferenceRead", { "bg": s:visual_grey })
+call s:h("LspReferenceText", { "bg": s:visual_grey })
+call s:h("LspReferenceWrite", { "bg": s:visual_grey })
 
 " }}}
 
