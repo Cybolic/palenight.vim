@@ -204,7 +204,9 @@ call s:h("VimwikiList", { "fg": s:red })
 " Coc and lsp {{{
 
 " Coc
-call s:h("CocErrorSign", { "fg": s:red, "gui": "bold" })
+call s:h("CocErrorFloat", {"fg": s:dark_red, "gui": "bold" })
+call s:h("CocErrorSign", {"fg": s:dark_red, "gui": "bold" })
+call s:h("CocErrorVirtualText", {"fg": s:dark_red, "gui": "bold" })
 call s:h("CocWarningSign", { "fg": s:dark_yellow, "gui": "bold" })
 call s:h("CocInfoSign", { "fg": s:yellow, "gui": "bold" })
 call s:h("CocHintSign", { "fg": s:blue, "gui": "bold" })
@@ -404,7 +406,7 @@ call s:h("mkdInlineURL", { "fg": s:light_red })
 call s:h("mkdListItem", { "fg": s:yellow })
 call s:h("markdownOrderedListMarker", { "fg": s:red })
 call s:h("markdownIdDeclaration", { "fg": s:blue })
-call s:h("mkdLink", { "fg": s:white })
+call s:h("mkdLink", { "fg": s:cyan })
 call s:h("markdownLinkDelimiter", { "fg": s:white })
 call s:h("mkdURL", { "fg": s:light_red })
 
