@@ -125,7 +125,7 @@ call s:h("StorageClass", { "fg": s:yellow }) " static, register, volatile, etc.
 call s:h("Structure", { "fg": s:yellow }) " struct, union, enum, etc.
 call s:h("Typedef", { "fg": s:yellow }) " A typedef
 call s:h("Special", { "fg": s:blue }) " any special symbol
-call s:h("SpecialChar", {}) " special character in a constant
+call s:h("SpecialChar", { "fg": s:dark_yellow }) " special character in a constant
 call s:h("Tag", {}) " you can use CTRL-] on this
 call s:h("Delimiter", {}) " character that needs attention
 call s:h("SpecialComment", { "fg": s:comment_grey }) " special things inside a comment
@@ -157,9 +157,9 @@ call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:yellow, "bg": s:comment_grey }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
 call s:h("LineNr", { "fg": s:gutter_fg_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-call s:h("CursorLineNr", {}) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:h("CursorLineNr", { "gui": "bold" }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 call s:h("MatchParen", { "fg": s:blue, "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
-call s:h("ModeMsg", {}) " 'showmode' message (e.g., "-- INSERT --")
+call s:h("ModeMsg", {}) " 'showmode' message (e.g., \"-- INSERT --\")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
 call s:h("Normal", { "fg": s:white, "bg": s:black }) " normal text
@@ -169,21 +169,88 @@ call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
 call s:h("PmenuThumb", { "bg": s:white }) " Popup menu: Thumb of the scrollbar.
 call s:h("Question", { "fg": s:purple }) " hit-enter prompt and yes/no questions
 call s:h("Search", { "fg": s:black, "bg": s:yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
-call s:h("SpecialKey", { "fg": s:special_grey }) " Meta and special keys listed with ":map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
+call s:h("SpecialKey", { "fg": s:special_grey }) " Meta and special keys listed with \":map\", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
 call s:h("SpellBad", { "fg": s:red, "gui": "underline", "cterm": "underline" }) " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
 call s:h("SpellCap", { "fg": s:dark_yellow }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
 call s:h("StatusLine", { "fg": s:white, "bg": s:cursor_grey }) " status line of current window
-call s:h("StatusLineNC", { "fg": s:comment_grey }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+call s:h("StatusLineNC", { "fg": s:comment_grey }) " status lines of not-current windows Note: if this is equal to \"StatusLine\" Vim will use \"^^^\" in the status line of the current window.
 call s:h("TabLine", { "fg": s:comment_grey }) " tab pages line, not active tab page label
 call s:h("TabLineFill", {}) " tab pages line, where there are no labels
 call s:h("TabLineSel", { "fg": s:white }) " tab pages line, active tab page label
 call s:h("Title", { "fg": s:green }) " titles for output from ":set all", ":autocmd" etc.
 call s:h("Visual", { "fg": s:visual_black, "bg": s:visual_grey }) " Visual mode selection
-call s:h("VisualNOS", { "bg": s:visual_grey }) " Visual mode selection when vim is "Not Owning the Selection". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
+call s:h("VisualNOS", { "bg": s:visual_grey }) " Visual mode selection when vim is \"Not Owning the Selection\". Only X11 Gui's gui-x11 and xterm-clipboard supports this.
 call s:h("WarningMsg", { "fg": s:yellow }) " warning messages
 call s:h("WildMenu", { "fg": s:black, "bg": s:blue }) " current match in 'wildmenu' completion
+
+" }}}
+
+" VimWiki {{{
+
+call s:h("VimwikiHeaderChar", { "fg": s:white })
+call s:h("VimwikiBoldChar", { "fg": s:white })
+call s:h("VimwikiHeader1", { "fg": s:yellow, "gui": "bold" })
+call s:h("VimwikiHeader2", { "fg": s:green, "gui": "bold" })
+call s:h("VimwikiHeader3", { "fg": s:purple, "gui": "bold" })
+call s:h("VimwikiHeader4", { "fg": s:blue_purple, "gui": "bold" })
+call s:h("VimwikiHeader5", { "fg": s:blue, "gui": "bold" })
+call s:h("VimwikiLink", { "fg": s:cyan, "gui": "underline" })
+call s:h("VimwikiList", { "fg": s:red })
+
+" }}} "
+
+" Coc and lsp {{{
+
+" Coc
+call s:h("CocErrorSign", { "fg": s:red, "gui": "bold" })
+call s:h("CocWarningSign", { "fg": s:dark_yellow, "gui": "bold" })
+call s:h("CocInfoSign", { "fg": s:yellow, "gui": "bold" })
+call s:h("CocHintSign", { "fg": s:blue, "gui": "bold" })
+call s:h("CocCursorRange", { "fg": s:black, "bg": s:red })
+
+call s:h("CocHighlightText", { "bg": s:visual_grey })
+call s:h("CocHighlightRead", { "bg": s:visual_grey })
+call s:h("CocHighlightWrite", { "bg": s:visual_grey })
+
+
+" Nvim builtin lsp
+call s:h("LspDiagnosticsSignError", { "fg": s:red, "gui": "bold" })
+call s:h("LspDiagnosticsSignWarning", { "fg": s:dark_yellow, "gui": "bold" })
+call s:h("LspDiagnosticsSignInformation", { "fg": s:yellow, "gui": "bold" })
+call s:h("LspDiagnosticsSignHint", { "fg": s:blue, "gui": "bold" })
+
+call s:h("LspDiagnosticsDefaultError", { "fg": s:red, "gui": "bold" })
+call s:h("LspDiagnosticsDefaultWarning", { "fg": s:dark_yellow, "gui": "bold" })
+call s:h("LspDiagnosticsDefaultInformation", { "fg": s:yellow, "gui": "bold" })
+call s:h("LspDiagnosticsDefaultHint", { "fg": s:blue, "gui": "bold" })
+
+call s:h("LspReferenceRead", { "bg": s:visual_grey })
+call s:h("LspReferenceText", { "bg": s:visual_grey })
+call s:h("LspReferenceWrite", { "bg": s:visual_grey })
+
+" }}}
+
+" Nvim CursorLine fixes {{{
+
+" Nvim
+call s:h("NvimSpacing", {"fg": s:white})
+call s:h("NvimTreeNormal", {"fg": s:white})
+call s:h("NvimTreePopup", {"fg": s:white})
+
+" Doxygen
+call s:h("doxygenCommentWhite", {"fg": s:white})
+
+" Coc
+call s:h("CocOutlineName", {"fg": s:white})
+
+" LspCxx
+call s:h("LspCxxHlSymVariable", {"fg": s:white})
+call s:h("LspCxxHlSymParameter", {"fg": s:white})
+call s:h("LspCxxHlSymUnknown", {"fg": s:white})
+call s:h("LspCxxHlSymUnknownStaticField", {"fg": s:white})
+call s:h("LspCxxHlSkippedRegionBeginEnd", {"fg": s:white})
 
 " }}}
 
@@ -470,6 +537,11 @@ call s:h("dartKeyword", { "fg": s:purple})
 hi link GitGutterAdd    SignifySignAdd
 hi link GitGutterChange SignifySignChange
 hi link GitGutterDelete SignifySignDelete
+
+" lewis6991/gitsigns.nvim
+hi link GitSignsAdd    SignifySignAdd
+hi link GitSignsChange SignifySignChange
+hi link GitSignsDelete SignifySignDelete
 
 " mhinz/vim-signify
 call s:h("SignifySignAdd", { "fg": s:green })
