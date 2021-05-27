@@ -26,7 +26,10 @@ let s:colors = {
       \ "vertsplit": get(s:overrides, "vertsplit", { "gui": "#181A1F", "cterm": "59", "cterm16": "15" }),
       \ "white_mask_1": get(s:overrides, "white_mask_1", { "gui": "#333747", "cterm": "237", "cterm16": "15" }),
       \ "white_mask_3": get(s:overrides, "white_mask_3", { "gui": "#474b59", "cterm": "238", "cterm16": "15" }),
-      \ "white_mask_11": get(s:overrides, "white_mask_11", { "gui": "#989aa2", "cterm": "238", "cterm16": "15" })
+      \ "white_mask_11": get(s:overrides, "white_mask_11", { "gui": "#989aa2", "cterm": "238", "cterm16": "15" }),
+      \ "near_black": get(s:overrides, "near_black", { "gui": "#212333", "cterm": "234", "cterm16": "0" }),
+      \ "menu_dark": get(s:overrides, "menu_dark", { "gui": "#352B59", "cterm": "225", "cterm16": "7" }),
+      \ "menu_light": get(s:overrides, "menu_light", { "gui": "#6A3EB5", "cterm": "213", "cterm16": "5" })
       \}
 
 function! palenight#GetColors()

@@ -90,7 +90,10 @@ let s:comment_grey = s:colors.comment_grey
 let s:gutter_fg_grey = s:colors.gutter_fg_grey
 let s:cursor_grey = s:colors.cursor_grey
 let s:visual_grey = s:colors.visual_grey
+let s:near_black = s:colors.near_black
 let s:menu_grey = s:colors.menu_grey
+let s:menu_dark = s:colors.menu_dark
+let s:menu_light = s:colors.menu_light
 let s:special_grey = s:colors.special_grey
 let s:vertsplit = s:colors.vertsplit
 let s:white_mask_3 = s:colors.white_mask_3
@@ -163,10 +166,10 @@ call s:h("ModeMsg", {}) " 'showmode' message (e.g., \"-- INSERT --\")
 call s:h("MoreMsg", {}) " more-prompt
 call s:h("NonText", { "fg": s:special_grey }) " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
 call s:h("Normal", { "fg": s:white, "bg": s:black }) " normal text
-call s:h("Pmenu", { "bg": s:menu_grey }) " Popup menu: normal item.
-call s:h("PmenuSel", { "fg": s:black, "bg": s:blue }) " Popup menu: selected item.
-call s:h("PmenuSbar", { "bg": s:special_grey }) " Popup menu: scrollbar.
-call s:h("PmenuThumb", { "bg": s:white }) " Popup menu: Thumb of the scrollbar.
+call s:h("Pmenu", { "bg": s:near_black }) " Popup menu: normal item.
+call s:h("PmenuSel", { "fg": s:white, "bg": s:menu_light }) " Popup menu: selected item.
+call s:h("PmenuSbar", { "fg": s:menu_dark, "bg": s:menu_dark }) " Popup menu: scrollbar.
+call s:h("PmenuThumb", { "fg": s:menu_dark, "bg": s:menu_dark }) " Popup menu: Thumb of the scrollbar.
 call s:h("Question", { "fg": s:purple }) " hit-enter prompt and yes/no questions
 call s:h("Search", { "fg": s:black, "bg": s:yellow }) " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
 call s:h("SpecialKey", { "fg": s:special_grey }) " Meta and special keys listed with \":map\", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
