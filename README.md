@@ -2,6 +2,8 @@
 
 A dark color scheme for Vim/Neovim based off the [Material Pale Night][materialLink] color scheme. Much of the work is based on the lovely [onedark.vim][onedark] color scheme.
 
+This fork tries to consolidate the additions made in other forks as well as add support for the new features in Neovim 0.5.
+
 ## Installation
 Using [vim-plug][vimplug] (modify this to work with your Vim package manager of choice):
 
